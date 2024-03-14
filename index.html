@@ -7,22 +7,27 @@
  </head>
  <body>
     <h1 id = "percentage">0</h1></br> 
+    <h2 id = "totalClicks">Total 0</h2></br>
     <h2 id = "highestPercentage"> High score 0%</h2></br> 
     <button onclick="button()"></button>
  </body>
  </html>
 
  <script>
+    let totalClicks = 0
     let percentage = 0;
     let highestPercentage = 0;
     function button() {
         if(Math.random()*101< percentage){
             if (highestPercentage<percentage){highestPercentage=percentage}
             percentage = 0;
+            totalClicks++;
         }else{
+            totalClicks++;
             percentage++;
         }
     document.getElementById("percentage").innerHTML = percentage + "%";
+    document.getElementById("totalClicks").innerHTML = "Total " + totalClicks;
     document.getElementById("highestPercentage").innerHTML = "High score " + highestPercentage + "%";
     }
  </script>
